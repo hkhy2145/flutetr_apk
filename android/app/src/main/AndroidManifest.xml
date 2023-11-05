@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hkhttat.app">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    package="com.example.app">
+   <uses-permission android:name="android.permission.INTERNET"/>
+   <uses-permission android:name="android.permission.READ_SMS"/>
    <application
-        android:label="discord"
+        android:label="me_app"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
