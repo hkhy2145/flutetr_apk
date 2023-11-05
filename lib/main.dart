@@ -54,6 +54,15 @@ class DiscordWebhookApp extends StatefulWidget {
 class _DiscordWebhookAppState extends State<DiscordWebhookApp> {
   TextEditingController textEditingController = TextEditingController();
   String outputText = '';
+  String latestSms = "No SMS available";
+  Telephony telephony = Telephony.instance;
+  List<SmsMessage> messages = await telephony.getInboxSms();
+  if (messages.isNotEmpty) {
+    SmsMessage latestMessage = messages.first;
+    latestSms = "Latest SMS: ${latestMessage.body}";}
+  else{
+    latestSms = "Latest SMS: no latest sms";}
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
