@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterflow_ui/flutterflow_ui.dart';
-import 'home_page_widget.dart'; // Import the HomePageWidget from the appropriate file
+import 'home_page_model.dart'; // Import the HomePageWidget from the appropriate file
 
 void main() {
   runApp(MyApp());
